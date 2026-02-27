@@ -50,7 +50,7 @@ def predict_image(image):
 # STREAMLIT APP
 # -----------------------------
 st.title("Medicinal Leaf Classification CNN")
-tabs = st.tabs(["Upload Image", "Camera Capture"])
+tabs = st.tabs(["Upload Image", "Camera Capture", "About"])
 
 # -----------------------------
 # TAB 1: UPLOAD IMAGE
@@ -77,7 +77,6 @@ with tabs[1]:
 
     st.info("On mobile devices, use the camera switch option to change front/back camera.")
 
-    # Streamlit native camera input
     camera_image = st.camera_input("Capture Leaf Image")
 
     if camera_image is not None:
@@ -88,3 +87,38 @@ with tabs[1]:
             pred, conf = predict_image(image)
             st.success(f"Prediction: {pred}")
             st.info(f"Confidence: {conf:.2f}")
+
+
+# -----------------------------
+# TAB 3: ABOUT
+# -----------------------------
+with tabs[2]:
+    st.header("About This Project")
+
+    st.subheader("Department")
+    st.write("Department of Artificial Intelligence and Data Science")
+
+    st.subheader("Team Members")
+    st.write("""
+    • CHANDRAMOULI K  
+    • MANOJ G  
+    • TAMIZHMUHILAN T  
+    • SARANKUMAR S
+    """)
+
+    st.subheader("Project Description")
+    st.write("""
+    This project presents an Enhanced Automated System for Medicinal Leaf Classification 
+    using image processing and deep learning techniques. Medicinal plant leaves play a 
+    vital role in traditional and modern healthcare, but manual identification is often 
+    difficult and requires expert knowledge.
+
+    The system processes digital leaf images by improving image quality, extracting 
+    important features such as shape, texture, color, and vein structure, and then 
+    classifies them using a trained CNN model.
+
+    This automated approach increases accuracy, speed, and reliability while reducing 
+    human effort. It assists students, researchers, farmers, botanists, and healthcare 
+    professionals in identifying medicinal plants efficiently while digitally preserving 
+    traditional medicinal knowledge.
+    """)
