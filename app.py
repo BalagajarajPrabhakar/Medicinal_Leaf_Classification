@@ -50,8 +50,8 @@ def predict_image(image):
 # STREAMLIT APP
 # -----------------------------
 st.title("Medicinal Leaf Classification CNN")
-  st.subheader("By:")
-    st.write("""
+st.subheader("By:")
+st.write("""
     • CHANDRAMOULI K  
     • MANOJ G  
     • TAMIZHMUHILAN T  
@@ -129,4 +129,5 @@ with tabs[2]:
     professionals in identifying medicinal plants efficiently while digitally preserving 
     traditional medicinal knowledge.
     """)
+
 
